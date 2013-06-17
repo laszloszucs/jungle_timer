@@ -1,6 +1,6 @@
 ﻿namespace Jungler_Timers
 {
-    partial class JunglerTimersWindow
+    partial class timerJungle
     {
         /// <summary>
         /// Variable nécessaire au concepteur.

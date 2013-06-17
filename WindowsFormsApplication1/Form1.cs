@@ -13,13 +13,14 @@ using System.IO;
 
 namespace Jungler_Timers
 {
-    public partial class JunglerTimersWindow : Form
+    public partial class timerJungle : Form
     {
         KeyboardHook hook = new KeyboardHook();
         static int language = 2;
         static String project_name = Path.GetFileName(Assembly.GetExecutingAssembly().Location);
         static String path = Directory.GetCurrentDirectory();
         List<KeyValuePair<int, string>> messageList = new List<KeyValuePair<int, string>>();
+        globalKeyboardHook globalHook = new globalKeyboardHook();
 
         #region enums
 
@@ -38,7 +39,7 @@ namespace Jungler_Timers
 
         #endregion
 
-        public JunglerTimersWindow()
+        public timerJungle()
         {
             InitializeComponent();
             initialization();
@@ -51,13 +52,19 @@ namespace Jungler_Timers
             resetAllTimers();
             initLanguages();
             initMessages();
+            List<Keys> keyList = new List<Keys>();
+            keyList.Add(Keys.F1);
+            keyList.Add(Keys.F2);
+            keyList.Add(Keys.F3);
+            keyList.Add(Keys.F4);
+            globalHook.HookedKeys = keyList;
             hook.KeyPressed += new EventHandler<KeyPressedEventArgs>(hook_KeyPressed);
-            hook.RegisterHotKey(Jungler_Timers.ModifierKeys.Control, Keys.D1);
-            hook.RegisterHotKey(Jungler_Timers.ModifierKeys.Control, Keys.D2);
-            hook.RegisterHotKey(Jungler_Timers.ModifierKeys.Control, Keys.D3);
-            hook.RegisterHotKey(Jungler_Timers.ModifierKeys.Control, Keys.D4);
-            hook.RegisterHotKey(Jungler_Timers.ModifierKeys.Control, Keys.D5);
-            hook.RegisterHotKey(Jungler_Timers.ModifierKeys.Control, Keys.D6);
+            //hook.RegisterHotKey(Jungler_Timers.ModifierKeys.Control, Keys.D1);
+            //hook.RegisterHotKey(Jungler_Timers.ModifierKeys.Control, Keys.D2);
+            //hook.RegisterHotKey(Jungler_Timers.ModifierKeys.Control, Keys.D3);
+            //hook.RegisterHotKey(Jungler_Timers.ModifierKeys.Control, Keys.D4);
+            //hook.RegisterHotKey(Jungler_Timers.ModifierKeys.Control, Keys.D5);
+            //hook.RegisterHotKey(Jungler_Timers.ModifierKeys.Control, Keys.D6);
         }
 
         #region methods
@@ -100,6 +107,12 @@ namespace Jungler_Timers
         }
 
         #region keypressed
+
+        public void redAlly_Pressed()
+        {
+            timerAllyRed.Start();
+            button_allyRed.state = 1;
+        }
 
         void hook_KeyPressed(object sender, KeyPressedEventArgs e)
         {

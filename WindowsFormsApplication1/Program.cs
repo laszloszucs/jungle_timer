@@ -15,7 +15,7 @@ namespace Jungler_Timers
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new JunglerTimersWindow());
+            Application.Run(new timerJungle());
         }
     }
 }
