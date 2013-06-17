@@ -20,7 +20,7 @@ namespace Jungler_Timers
         static String project_name = Path.GetFileName(Assembly.GetExecutingAssembly().Location);
         static String path = Directory.GetCurrentDirectory();
         List<KeyValuePair<int, string>> messageList = new List<KeyValuePair<int, string>>();
-        globalKeyboardHook globalHook = new globalKeyboardHook();
+        globalKeyboardHook ghk = new globalKeyboardHook();
 
         #region enums
 
@@ -52,19 +52,7 @@ namespace Jungler_Timers
             resetAllTimers();
             initLanguages();
             initMessages();
-            List<Keys> keyList = new List<Keys>();
-            keyList.Add(Keys.F1);
-            keyList.Add(Keys.F2);
-            keyList.Add(Keys.F3);
-            keyList.Add(Keys.F4);
-            globalHook.HookedKeys = keyList;
-            hook.KeyPressed += new EventHandler<KeyPressedEventArgs>(hook_KeyPressed);
-            //hook.RegisterHotKey(Jungler_Timers.ModifierKeys.Control, Keys.D1);
-            //hook.RegisterHotKey(Jungler_Timers.ModifierKeys.Control, Keys.D2);
-            //hook.RegisterHotKey(Jungler_Timers.ModifierKeys.Control, Keys.D3);
-            //hook.RegisterHotKey(Jungler_Timers.ModifierKeys.Control, Keys.D4);
-            //hook.RegisterHotKey(Jungler_Timers.ModifierKeys.Control, Keys.D5);
-            //hook.RegisterHotKey(Jungler_Timers.ModifierKeys.Control, Keys.D6);
+            initKeys();
         }
 
         #region methods
@@ -108,15 +96,9 @@ namespace Jungler_Timers
 
         #region keypressed
 
-        public void redAlly_Pressed()
+        void ghk_KeyUp(object sender, KeyEventArgs e)
         {
-            timerAllyRed.Start();
-            button_allyRed.state = 1;
-        }
-
-        void hook_KeyPressed(object sender, KeyPressedEventArgs e)
-        {
-            if (e.Modifier == Jungler_Timers.ModifierKeys.Control && e.Key == Keys.D1)
+            if (e.KeyData == Keys.F1)
             {
                 if (button_allyRed.state == 0)
                 {
@@ -129,7 +111,7 @@ namespace Jungler_Timers
                     button_allyRed.state = 0;
                 }
             }
-            else if (e.Modifier == Jungler_Timers.ModifierKeys.Control && e.Key == Keys.D2)
+            else if (e.KeyData == Keys.F2)
             {
                 if (button_allyBlue.state == 0)
                 {
@@ -142,7 +124,7 @@ namespace Jungler_Timers
                     button_allyBlue.state = 0;
                 }
             }
-            else if (e.Modifier == Jungler_Timers.ModifierKeys.Control && e.Key == Keys.D3)
+            else if (e.KeyData == Keys.F3)
             {
                 if (button_enemyRed.state == 0)
                 {
@@ -155,7 +137,7 @@ namespace Jungler_Timers
                     button_enemyRed.state = 0;
                 }
             }
-            else if (e.Modifier == Jungler_Timers.ModifierKeys.Control && e.Key == Keys.D4)
+            else if (e.KeyData == Keys.F4)
             {
                 if (button_enemyBlue.state == 0)
                 {
@@ -168,7 +150,7 @@ namespace Jungler_Timers
                     button_enemyBlue.state = 0;
                 }
             }
-            else if (e.Modifier == Jungler_Timers.ModifierKeys.Control && e.Key == Keys.D5)
+            else if (e.KeyData == Keys.F5)
             {
                 if (button_drake.state == 0)
                 {
@@ -181,7 +163,7 @@ namespace Jungler_Timers
                     button_drake.state = 0;
                 }
             }
-            else if (e.Modifier == Jungler_Timers.ModifierKeys.Control && e.Key == Keys.D6)
+            else if (e.KeyData == Keys.F6)
             {
                 if (button_baronNashor.state == 0)
                 {
@@ -199,6 +181,17 @@ namespace Jungler_Timers
         #endregion
 
         #region inits
+
+        private void initKeys()
+        {
+            ghk.HookedKeys.Add(Keys.F1);
+            ghk.HookedKeys.Add(Keys.F2);
+            ghk.HookedKeys.Add(Keys.F3);
+            ghk.HookedKeys.Add(Keys.F4);
+            ghk.HookedKeys.Add(Keys.F5);
+            ghk.HookedKeys.Add(Keys.F6);
+            ghk.KeyUp += new KeyEventHandler(ghk_KeyUp);
+        }
 
         private void initMessages()
         {
@@ -336,7 +329,7 @@ namespace Jungler_Timers
                 playMessage(30, 3);
             else if (numeric_blueAllieCd.Value == 2)
                 playMessage(0, 3);
-            if (numeric_redEnemyCd.Value == 0)
+            if (numeric_redEnemyCd.Value != 0)
                 numeric_redEnemyCd.Value--;
             else
             {
@@ -352,7 +345,7 @@ namespace Jungler_Timers
                 playMessage(30, 4);
             else if (numeric_blueEnemyCd.Value == 2)
                 playMessage(0, 4);
-            if (numeric_blueEnemyCd.Value == 0)
+            if (numeric_blueEnemyCd.Value != 0)
                 numeric_blueEnemyCd.Value--;
             else
             {
@@ -368,7 +361,7 @@ namespace Jungler_Timers
                 playMessage(30, 5);
             else if (numeric_drake.Value == 2)
                 playMessage(0, 5);
-            if (numeric_drake.Value == 0)
+            if (numeric_drake.Value != 0)
                 numeric_drake.Value--;
             else
             {
@@ -384,7 +377,7 @@ namespace Jungler_Timers
                 playMessage(30, 6);
             else if (numeric_baronNashor.Value == 2)
                 playMessage(0, 6);
-            if (numeric_baronNashor.Value == 0)
+            if (numeric_baronNashor.Value != 0)
                 numeric_baronNashor.Value--;
             else
             {

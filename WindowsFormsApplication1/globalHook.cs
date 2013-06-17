@@ -104,10 +104,6 @@ namespace Jungler_Timers
                 if (HookedKeys.Contains(key))
                 {
                     KeyEventArgs kea = new KeyEventArgs(key);
-                    if (key == Keys.F1)
-                    {
-                        
-                    }
                     if ((wParam == WM_KEYDOWN || wParam == WM_SYSKEYDOWN) && (KeyDown != null))
                     {
                         KeyDown(this, kea);
