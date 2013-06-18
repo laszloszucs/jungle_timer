@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jungler_Timer", "WindowsFormsApplication1\Jungler_Timer.csproj", "{C79D5534-BB5F-4DA2-B3EF-47875AD9632D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jungler_Timer", "JunglerTimer\Jungler_Timer.csproj", "{C79D5534-BB5F-4DA2-B3EF-47875AD9632D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

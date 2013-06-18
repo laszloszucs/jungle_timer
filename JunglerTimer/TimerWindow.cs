@@ -10,6 +10,7 @@ using System.Media;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using System.IO;
+using System.Resources;
 
 namespace Jungler_Timers
 {
@@ -18,7 +19,7 @@ namespace Jungler_Timers
         static int language = 2;
         static String project_name = Path.GetFileName(Assembly.GetExecutingAssembly().Location);
         static String path = Directory.GetCurrentDirectory();
-        List<KeyValuePair<int, string>> messageList = new List<KeyValuePair<int, string>>();
+        List<KeyValuePair<int, SoundPlayer>> soundsList = new List<KeyValuePair<int, SoundPlayer>>();
         globalKeyboardHook ghk = new globalKeyboardHook();
 
         #region enums
@@ -46,7 +47,6 @@ namespace Jungler_Timers
 
         public void initialization()
         {
-            project_name = project_name.Substring(0, project_name.Length - 4);
             initAllNumeric();
             resetAllTimers();
             initLanguages();
@@ -72,24 +72,14 @@ namespace Jungler_Timers
             }
         }
 
-        private void playMessage(int length, int messageID)
+        private void playMessage(int messageID)
         {
-            string chosenLanguageDir = "";
-            string soundsPath = "";
-            string chosenMessage = "";
-
-            if (language == (int)languages.francais)
-                chosenLanguageDir = "fr\\";
-            else if (language == (int)languages.english)
-                chosenLanguageDir = "en\\";
-            soundsPath += path.Substring(0, path.LastIndexOf(project_name.Remove(project_name.Length - 1)));
-            soundsPath += project_name + "\\";
-            foreach (KeyValuePair<int, string> item in messageList)
+            SoundPlayer sound = null;
+            foreach (KeyValuePair<int, SoundPlayer> item in soundsList)
             {
                 if (messageID == item.Key)
-                    chosenMessage = item.Value;
+                    sound = item.Value;
             }
-            SoundPlayer sound = new SoundPlayer(soundsPath + "obj\\sounds\\" + chosenLanguageDir + chosenMessage + length.ToString() + ".WAV");
             sound.Play();
         }
 
@@ -194,12 +184,22 @@ namespace Jungler_Timers
 
         private void initMessages()
         {
-            messageList.Add(new KeyValuePair<int, string>(1, "redBuffAlly"));
-            messageList.Add(new KeyValuePair<int, string>(2, "blueBuffAlly"));
-            messageList.Add(new KeyValuePair<int, string>(3, "redBuffEnemy"));
-            messageList.Add(new KeyValuePair<int, string>(4, "blueBuffEnemy"));
-            messageList.Add(new KeyValuePair<int, string>(5, "drake"));
-            messageList.Add(new KeyValuePair<int, string>(6, "baronNashor"));
+            project_name = project_name.Substring(0, project_name.Length - 4);
+            if (project_name.Contains(" "))
+                project_name = project_name.Trim();
+
+            soundsList.Add(new KeyValuePair<int, SoundPlayer>(1, new SoundPlayer(Jungler_Timers.Properties.Resources.redBuffAlly30)));
+            soundsList.Add(new KeyValuePair<int, SoundPlayer>(2, new SoundPlayer(Jungler_Timers.Properties.Resources.redBuffAlly0)));
+            soundsList.Add(new KeyValuePair<int, SoundPlayer>(3, new SoundPlayer(Jungler_Timers.Properties.Resources.blueBuffAlly30)));
+            soundsList.Add(new KeyValuePair<int, SoundPlayer>(4, new SoundPlayer(Jungler_Timers.Properties.Resources.blueBuffAlly0)));
+            soundsList.Add(new KeyValuePair<int, SoundPlayer>(5, new SoundPlayer(Jungler_Timers.Properties.Resources.redBuffEnemy30)));
+            soundsList.Add(new KeyValuePair<int, SoundPlayer>(6, new SoundPlayer(Jungler_Timers.Properties.Resources.redBuffEnemy0)));
+            soundsList.Add(new KeyValuePair<int, SoundPlayer>(7, new SoundPlayer(Jungler_Timers.Properties.Resources.blueBuffEnemy30)));
+            soundsList.Add(new KeyValuePair<int, SoundPlayer>(8, new SoundPlayer(Jungler_Timers.Properties.Resources.blueBuffEnemy0)));
+            soundsList.Add(new KeyValuePair<int, SoundPlayer>(9, new SoundPlayer(Jungler_Timers.Properties.Resources.drake30)));
+            soundsList.Add(new KeyValuePair<int, SoundPlayer>(10, new SoundPlayer(Jungler_Timers.Properties.Resources.drake0)));
+            soundsList.Add(new KeyValuePair<int, SoundPlayer>(11, new SoundPlayer(Jungler_Timers.Properties.Resources.baronNashor30)));
+            soundsList.Add(new KeyValuePair<int, SoundPlayer>(12, new SoundPlayer(Jungler_Timers.Properties.Resources.baronNashor0)));
         }
 
         private void initLanguages()
@@ -300,10 +300,10 @@ namespace Jungler_Timers
 
         private void timerRedAllies_Tick(object sender, EventArgs e)
         {
-            if (numeric_redAllieCd.Value == 32)
-                playMessage(30, 1);
+            if (numeric_redAllieCd.Value == 295)
+                playMessage(1);
             else if (numeric_redAllieCd.Value == 2)
-                playMessage(0, 1);
+                playMessage(2);
             if (numeric_redAllieCd.Value != 0)
                 numeric_redAllieCd.Value--;
             else
@@ -317,9 +317,9 @@ namespace Jungler_Timers
         private void timerBlueAllies_Tick(object sender, EventArgs e)
         {
             if (numeric_blueAllieCd.Value == 32)
-                playMessage(30, 2);
+                playMessage(3);
             else if (numeric_blueAllieCd.Value == 2)
-                playMessage(0, 2);
+                playMessage(4);
             if (numeric_blueAllieCd.Value != 0)
                 numeric_blueAllieCd.Value--;
             else
@@ -333,9 +333,9 @@ namespace Jungler_Timers
         private void timerEnemyRed_Tick(object sender, EventArgs e)
         {
             if (numeric_blueAllieCd.Value == 32)
-                playMessage(30, 3);
+                playMessage(5);
             else if (numeric_blueAllieCd.Value == 2)
-                playMessage(0, 3);
+                playMessage(6);
             if (numeric_redEnemyCd.Value != 0)
                 numeric_redEnemyCd.Value--;
             else
@@ -349,9 +349,9 @@ namespace Jungler_Timers
         private void timerEnemyBlue_Tick(object sender, EventArgs e)
         {
             if (numeric_blueEnemyCd.Value == 32)
-                playMessage(30, 4);
+                playMessage(7);
             else if (numeric_blueEnemyCd.Value == 2)
-                playMessage(0, 4);
+                playMessage(8);
             if (numeric_blueEnemyCd.Value != 0)
                 numeric_blueEnemyCd.Value--;
             else
@@ -365,9 +365,9 @@ namespace Jungler_Timers
         private void timerDrake_Tick(object sender, EventArgs e)
         {
             if (numeric_drake.Value == 32)
-                playMessage(30, 5);
+                playMessage(9);
             else if (numeric_drake.Value == 2)
-                playMessage(0, 5);
+                playMessage(10);
             if (numeric_drake.Value != 0)
                 numeric_drake.Value--;
             else
@@ -381,9 +381,9 @@ namespace Jungler_Timers
         private void timerNashor_Tick(object sender, EventArgs e)
         {
             if (numeric_baronNashor.Value == 32)
-                playMessage(30, 6);
+                playMessage(11);
             else if (numeric_baronNashor.Value == 2)
-                playMessage(0, 6);
+                playMessage(12);
             if (numeric_baronNashor.Value != 0)
                 numeric_baronNashor.Value--;
             else

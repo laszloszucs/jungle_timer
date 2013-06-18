@@ -59,5 +59,77 @@ namespace Jungler_Timers.Properties {
                 resourceCulture = value;
             }
         }
+        
+        internal static System.IO.UnmanagedMemoryStream baronNashor0 {
+            get {
+                return ResourceManager.GetStream("baronNashor0", resourceCulture);
+            }
+        }
+        
+        internal static System.IO.UnmanagedMemoryStream baronNashor30 {
+            get {
+                return ResourceManager.GetStream("baronNashor30", resourceCulture);
+            }
+        }
+        
+        internal static System.IO.UnmanagedMemoryStream blueBuffAlly0 {
+            get {
+                return ResourceManager.GetStream("blueBuffAlly0", resourceCulture);
+            }
+        }
+        
+        internal static System.IO.UnmanagedMemoryStream blueBuffAlly30 {
+            get {
+                return ResourceManager.GetStream("blueBuffAlly30", resourceCulture);
+            }
+        }
+        
+        internal static System.IO.UnmanagedMemoryStream blueBuffEnemy0 {
+            get {
+                return ResourceManager.GetStream("blueBuffEnemy0", resourceCulture);
+            }
+        }
+        
+        internal static System.IO.UnmanagedMemoryStream blueBuffEnemy30 {
+            get {
+                return ResourceManager.GetStream("blueBuffEnemy30", resourceCulture);
+            }
+        }
+        
+        internal static System.IO.UnmanagedMemoryStream drake0 {
+            get {
+                return ResourceManager.GetStream("drake0", resourceCulture);
+            }
+        }
+        
+        internal static System.IO.UnmanagedMemoryStream drake30 {
+            get {
+                return ResourceManager.GetStream("drake30", resourceCulture);
+            }
+        }
+        
+        internal static System.IO.UnmanagedMemoryStream redBuffAlly0 {
+            get {
+                return ResourceManager.GetStream("redBuffAlly0", resourceCulture);
+            }
+        }
+        
+        internal static System.IO.UnmanagedMemoryStream redBuffAlly30 {
+            get {
+                return ResourceManager.GetStream("redBuffAlly30", resourceCulture);
+            }
+        }
+        
+        internal static System.IO.UnmanagedMemoryStream redBuffEnemy0 {
+            get {
+                return ResourceManager.GetStream("redBuffEnemy0", resourceCulture);
+            }
+        }
+        
+        internal static System.IO.UnmanagedMemoryStream redBuffEnemy30 {
+            get {
+                return ResourceManager.GetStream("redBuffEnemy30", resourceCulture);
+            }
+        }
     }
 }
