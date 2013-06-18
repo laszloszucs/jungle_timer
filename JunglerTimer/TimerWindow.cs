@@ -300,7 +300,7 @@ namespace Jungler_Timers
 
         private void timerRedAllies_Tick(object sender, EventArgs e)
         {
-            if (numeric_redAllieCd.Value == 295)
+            if (numeric_redAllieCd.Value == 32)
                 playMessage(1);
             else if (numeric_redAllieCd.Value == 2)
                 playMessage(2);
