@@ -57,7 +57,6 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="globalHook.cs" />
-    <Compile Include="keyboardHook.cs" />
     <Compile Include="myNumericUpDown.cs">
       <SubType>Component</SubType>
     </Compile>

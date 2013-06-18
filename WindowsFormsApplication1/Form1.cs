@@ -15,7 +15,6 @@ namespace Jungler_Timers
 {
     public partial class timerJungle : Form
     {
-        KeyboardHook hook = new KeyboardHook();
         static int language = 2;
         static String project_name = Path.GetFileName(Assembly.GetExecutingAssembly().Location);
         static String path = Directory.GetCurrentDirectory();
@@ -90,8 +89,8 @@ namespace Jungler_Timers
                 if (messageID == item.Key)
                     chosenMessage = item.Value;
             }
-            SoundPlayer redBuffAllieSound = new SoundPlayer(soundsPath + "obj\\sounds\\" + chosenLanguageDir + chosenMessage + length.ToString() + ".WAV");
-            redBuffAllieSound.Play();
+            SoundPlayer sound = new SoundPlayer(soundsPath + "obj\\sounds\\" + chosenLanguageDir + chosenMessage + length.ToString() + ".WAV");
+            sound.Play();
         }
 
         #region keypressed
@@ -205,8 +204,16 @@ namespace Jungler_Timers
 
         private void initLanguages()
         {
-            francaisToolStripMenuItem.Checked = true;
-            englishToolStripMenuItem.Checked = false;
+            if (language == (int)languages.francais)
+            {
+                francaisToolStripMenuItem.Checked = true;
+                englishToolStripMenuItem.Checked = false;
+            }
+            else if (language == (int)languages.english)
+            {
+                englishToolStripMenuItem.Checked = true;
+                francaisToolStripMenuItem.Checked = false;
+            }
         }
 
         private void initAllNumeric()
@@ -314,7 +321,7 @@ namespace Jungler_Timers
             else if (numeric_blueAllieCd.Value == 2)
                 playMessage(0, 2);
             if (numeric_blueAllieCd.Value != 0)
-            numeric_blueAllieCd.Value--;
+                numeric_blueAllieCd.Value--;
             else
             {
                 timerAllyBlue.Stop();
