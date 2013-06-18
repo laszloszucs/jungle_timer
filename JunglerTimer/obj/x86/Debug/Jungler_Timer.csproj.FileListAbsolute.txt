@@ -43,3 +43,12 @@ C:\Users\Maxime\Documents\GitHub\jungle_timer\JunglerTimer\obj\x86\Debug\Generat
 C:\Users\Maxime\Documents\GitHub\jungle_timer\JunglerTimer\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\Maxime\Documents\GitHub\jungle_timer\JunglerTimer\obj\x86\Debug\JunglerTimer.exe
 C:\Users\Maxime\Documents\GitHub\jungle_timer\JunglerTimer\obj\x86\Debug\JunglerTimer.pdb
+C:\Users\Wanabee\Documents\GitHub\jungle_timer\JunglerTimer\obj\x86\Debug\JunglerTimer.exe
+C:\Users\Wanabee\Documents\GitHub\jungle_timer\JunglerTimer\obj\x86\Debug\JunglerTimer.pdb
+C:\Users\Wanabee\Documents\GitHub\jungle_timer\JunglerTimer\bin\Debug\JunglerTimer.exe
+C:\Users\Wanabee\Documents\GitHub\jungle_timer\JunglerTimer\bin\Debug\JunglerTimer.pdb
+C:\Users\Wanabee\Documents\GitHub\jungle_timer\JunglerTimer\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Wanabee\Documents\GitHub\jungle_timer\JunglerTimer\obj\x86\Debug\Jungler_Timers.timerJungle.resources
+C:\Users\Wanabee\Documents\GitHub\jungle_timer\JunglerTimer\obj\x86\Debug\Jungler_Timers.Properties.Resources.resources
+C:\Users\Wanabee\Documents\GitHub\jungle_timer\JunglerTimer\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Wanabee\Documents\GitHub\jungle_timer\JunglerTimer\obj\x86\Debug\GenerateResource.write.1.tlog
