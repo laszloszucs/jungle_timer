@@ -5,7 +5,7 @@ A small app to countodwn buffs, dragon and baron's respawn times in League of Le
 
 ------------- README -------------
 
-This application is still in beta-test, feel free to give your fedback at maxime@mhaudebert.fr !
+This application is still in beta-test, feel free to give your feedback at maxime@mhaudebert.fr !
 
 Keys to use :
 
