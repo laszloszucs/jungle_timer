@@ -223,6 +223,11 @@ namespace Jungler_Timers
             this.BackgroundImage = Jungler_Timers.Properties.Resources.background;
             this.Icon = icon;
             button_allyRed.BackgroundImage = Jungler_Timers.Properties.Resources.button;
+            button_allyBlue.BackgroundImage = Jungler_Timers.Properties.Resources.button;
+            button_baronNashor.BackgroundImage = Jungler_Timers.Properties.Resources.button;
+            button_drake.BackgroundImage = Jungler_Timers.Properties.Resources.button;
+            button_enemyBlue.BackgroundImage = Jungler_Timers.Properties.Resources.button;
+            button_enemyRed.BackgroundImage = Jungler_Timers.Properties.Resources.button;
             numeric_redAllieCd.ReadOnly = true;
             numeric_blueAllieCd.ReadOnly = true;
             numeric_redEnemyCd.ReadOnly = true;
