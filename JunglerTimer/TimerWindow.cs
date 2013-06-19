@@ -219,6 +219,7 @@ namespace Jungler_Timers
         private void initAllNumeric()
         {
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             System.Drawing.Icon icon = System.Drawing.Icon.FromHandle(Jungler_Timers.Properties.Resources.icon.GetHicon());
             this.BackgroundImage = Jungler_Timers.Properties.Resources.background;
             this.Icon = icon;

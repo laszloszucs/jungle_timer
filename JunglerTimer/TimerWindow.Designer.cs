@@ -181,6 +181,7 @@
             // 
             // button_drake
             // 
+            this.button_drake.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_drake.ForeColor = System.Drawing.Color.White;
             this.button_drake.Location = new System.Drawing.Point(147, 311);
             this.button_drake.Name = "button_drake";
@@ -193,9 +194,10 @@
             // 
             // button_baronNashor
             // 
+            this.button_baronNashor.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_baronNashor.ForeColor = System.Drawing.Color.White;
             this.button_baronNashor.Location = new System.Drawing.Point(359, 311);
             this.button_baronNashor.Name = "button_baronNashor";
-            this.button_baronNashor.ForeColor = System.Drawing.Color.White;
             this.button_baronNashor.Size = new System.Drawing.Size(125, 35);
             this.button_baronNashor.state = 0;
             this.button_baronNashor.TabIndex = 12;
@@ -219,11 +221,12 @@
             // 
             // button_enemyBlue
             // 
+            this.button_enemyBlue.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_enemyBlue.ForeColor = System.Drawing.Color.White;
             this.button_enemyBlue.Location = new System.Drawing.Point(419, 181);
             this.button_enemyBlue.Name = "button_enemyBlue";
             this.button_enemyBlue.Size = new System.Drawing.Size(125, 35);
             this.button_enemyBlue.state = 0;
-            this.button_enemyBlue.ForeColor = System.Drawing.Color.White;
             this.button_enemyBlue.TabIndex = 9;
             this.button_enemyBlue.Text = "Enemies blue timer";
             this.button_enemyBlue.UseVisualStyleBackColor = true;
@@ -231,11 +234,12 @@
             // 
             // button_enemyRed
             // 
+            this.button_enemyRed.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_enemyRed.ForeColor = System.Drawing.Color.White;
             this.button_enemyRed.Location = new System.Drawing.Point(419, 54);
             this.button_enemyRed.Name = "button_enemyRed";
             this.button_enemyRed.Size = new System.Drawing.Size(125, 35);
             this.button_enemyRed.state = 0;
-            this.button_enemyRed.ForeColor = System.Drawing.Color.White;
             this.button_enemyRed.TabIndex = 8;
             this.button_enemyRed.Text = "Enemies red timer";
             this.button_enemyRed.UseVisualStyleBackColor = true;
@@ -257,9 +261,10 @@
             // 
             // button_allyBlue
             // 
+            this.button_allyBlue.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_allyBlue.ForeColor = System.Drawing.Color.White;
             this.button_allyBlue.Location = new System.Drawing.Point(48, 181);
             this.button_allyBlue.Name = "button_allyBlue";
-            this.button_allyBlue.ForeColor = System.Drawing.Color.White;
             this.button_allyBlue.Size = new System.Drawing.Size(125, 35);
             this.button_allyBlue.state = 0;
             this.button_allyBlue.TabIndex = 5;
@@ -269,7 +274,6 @@
             // 
             // button_allyRed
             // 
-            this.button_allyRed.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_allyRed.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_allyRed.ForeColor = System.Drawing.Color.White;
             this.button_allyRed.Location = new System.Drawing.Point(48, 54);

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using System.ComponentModel;
 
 namespace Jungler_Timers
 {
@@ -13,6 +14,7 @@ namespace Jungler_Timers
         /// defines the callback type for the hook
         /// </summary>
         public delegate int keyboardHookProc(int code, int wParam, ref keyboardHookStruct lParam);
+        private static keyboardHookProc callbackDelegate;
 
         public struct keyboardHookStruct
         {
@@ -58,7 +60,10 @@ namespace Jungler_Timers
         /// </summary>
         public globalKeyboardHook()
         {
-            hook();
+            IntPtr hInstance = LoadLibrary("User32");
+            callbackDelegate = new keyboardHookProc(hookProc);
+            hhook = SetWindowsHookEx(WH_KEYBOARD_LL, callbackDelegate, hInstance, 0);
+            if (hhook == IntPtr.Zero) throw new Win32Exception();
         }
 
         /// <summary>
@@ -67,7 +72,8 @@ namespace Jungler_Timers
         /// </summary>
         ~globalKeyboardHook()
         {
-            unhook();
+            UnhookWindowsHookEx(hhook);
+            callbackDelegate = null;
         }
         #endregion
 
