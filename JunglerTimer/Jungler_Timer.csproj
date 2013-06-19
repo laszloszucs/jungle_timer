@@ -163,6 +163,15 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="background.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371643071_leagueoflegendscharacters_660913.jpeg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

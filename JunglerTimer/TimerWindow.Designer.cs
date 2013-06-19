@@ -90,8 +90,8 @@
             // toolStripMenuItem_parent
             // 
             this.toolStripMenuItem_parent.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStrip_resetAllTimers,
-            this.toolStrip_pauseAllTimers});
+            this.toolStrip_pauseAllTimers,
+            this.toolStrip_resetAllTimers});
             this.toolStripMenuItem_parent.Name = "toolStripMenuItem_parent";
             this.toolStripMenuItem_parent.Size = new System.Drawing.Size(55, 20);
             this.toolStripMenuItem_parent.Text = "Timers";
@@ -130,14 +130,14 @@
             // francaisToolStripMenuItem
             // 
             this.francaisToolStripMenuItem.Name = "francaisToolStripMenuItem";
-            this.francaisToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.francaisToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.francaisToolStripMenuItem.Text = "Francais";
             this.francaisToolStripMenuItem.Click += new System.EventHandler(this.francaisToolStripMenuItem_Click);
             // 
             // englishToolStripMenuItem
             // 
             this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
-            this.englishToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.englishToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.englishToolStripMenuItem.Text = "English";
             this.englishToolStripMenuItem.Click += new System.EventHandler(this.englishToolStripMenuItem_Click);
             // 
@@ -273,7 +273,7 @@
             this.button_allyRed.UseVisualStyleBackColor = true;
             this.button_allyRed.Click += new System.EventHandler(this.button_redAllie_Click);
             // 
-            // JunglerTimersWindow
+            // timerJungle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -292,7 +292,7 @@
             this.Controls.Add(this.button_allyRed);
             this.Controls.Add(this.menuStrip_timers);
             this.MainMenuStrip = this.menuStrip_timers;
-            this.Name = "JunglerTimersWindow";
+            this.Name = "timerJungle";
             this.Text = "Jungle Timer";
             this.menuStrip_timers.ResumeLayout(false);
             this.menuStrip_timers.PerformLayout();

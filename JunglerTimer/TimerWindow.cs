@@ -218,6 +218,9 @@ namespace Jungler_Timers
 
         private void initAllNumeric()
         {
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            System.Drawing.Image background = Jungler_Timers.Properties.Resources.background;
+            this.BackgroundImage = background;
             numeric_redAllieCd.ReadOnly = true;
             numeric_blueAllieCd.ReadOnly = true;
             numeric_redEnemyCd.ReadOnly = true;
