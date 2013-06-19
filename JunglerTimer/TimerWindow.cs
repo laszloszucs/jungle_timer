@@ -219,8 +219,10 @@ namespace Jungler_Timers
         private void initAllNumeric()
         {
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            System.Drawing.Image background = Jungler_Timers.Properties.Resources.background;
-            this.BackgroundImage = background;
+            System.Drawing.Icon icon = System.Drawing.Icon.FromHandle(Jungler_Timers.Properties.Resources.icon.GetHicon());
+            this.BackgroundImage = Jungler_Timers.Properties.Resources.background;
+            this.Icon = icon;
+            button_allyRed.BackgroundImage = Jungler_Timers.Properties.Resources.button;
             numeric_redAllieCd.ReadOnly = true;
             numeric_blueAllieCd.ReadOnly = true;
             numeric_redEnemyCd.ReadOnly = true;

@@ -33,8 +33,8 @@
             this.timerAllyBlue = new System.Windows.Forms.Timer(this.components);
             this.menuStrip_timers = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem_parent = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStrip_resetAllTimers = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip_pauseAllTimers = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStrip_resetAllTimers = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.francaisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -96,19 +96,19 @@
             this.toolStripMenuItem_parent.Size = new System.Drawing.Size(55, 20);
             this.toolStripMenuItem_parent.Text = "Timers";
             // 
-            // toolStrip_resetAllTimers
-            // 
-            this.toolStrip_resetAllTimers.Name = "toolStrip_resetAllTimers";
-            this.toolStrip_resetAllTimers.Size = new System.Drawing.Size(156, 22);
-            this.toolStrip_resetAllTimers.Text = "Reset all timers";
-            this.toolStrip_resetAllTimers.Click += new System.EventHandler(this.toolStrip_resetAllTimers_Click);
-            // 
             // toolStrip_pauseAllTimers
             // 
             this.toolStrip_pauseAllTimers.Name = "toolStrip_pauseAllTimers";
             this.toolStrip_pauseAllTimers.Size = new System.Drawing.Size(156, 22);
             this.toolStrip_pauseAllTimers.Text = "Pause all timers";
             this.toolStrip_pauseAllTimers.Click += new System.EventHandler(this.toolStrip_pauseAllTimers_Click);
+            // 
+            // toolStrip_resetAllTimers
+            // 
+            this.toolStrip_resetAllTimers.Name = "toolStrip_resetAllTimers";
+            this.toolStrip_resetAllTimers.Size = new System.Drawing.Size(156, 22);
+            this.toolStrip_resetAllTimers.Text = "Reset all timers";
+            this.toolStrip_resetAllTimers.Click += new System.EventHandler(this.toolStrip_resetAllTimers_Click);
             // 
             // optionsToolStripMenuItem
             // 
@@ -124,20 +124,20 @@
             this.francaisToolStripMenuItem,
             this.englishToolStripMenuItem});
             this.languageToolStripMenuItem.Name = "languageToolStripMenuItem";
-            this.languageToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.languageToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.languageToolStripMenuItem.Text = "Language";
             // 
             // francaisToolStripMenuItem
             // 
             this.francaisToolStripMenuItem.Name = "francaisToolStripMenuItem";
-            this.francaisToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.francaisToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.francaisToolStripMenuItem.Text = "Francais";
             this.francaisToolStripMenuItem.Click += new System.EventHandler(this.francaisToolStripMenuItem_Click);
             // 
             // englishToolStripMenuItem
             // 
             this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
-            this.englishToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.englishToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.englishToolStripMenuItem.Text = "English";
             this.englishToolStripMenuItem.Click += new System.EventHandler(this.englishToolStripMenuItem_Click);
             // 
@@ -264,6 +264,9 @@
             // 
             // button_allyRed
             // 
+            this.button_allyRed.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_allyRed.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_allyRed.ForeColor = System.Drawing.Color.White;
             this.button_allyRed.Location = new System.Drawing.Point(48, 54);
             this.button_allyRed.Name = "button_allyRed";
             this.button_allyRed.Size = new System.Drawing.Size(125, 35);
