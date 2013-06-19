@@ -10,10 +10,15 @@ This application is still in beta-test, feel free to give your fedback at maxime
 Keys to use :
 
 F1 to start your red buff countdown
+
 F2 to start your blue buff countdown
+
 F3 to start enemy red buff countdown
+
 F4 to start enemy blue buff countdown
+
 F5 to start drake countdown
+
 F6 to start baron Nashor countdown
 
 Vocal announces will start 30 seconds before buff respawns and when it respawns.
