@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(timerJungle));
             this.timerAllyRed = new System.Windows.Forms.Timer(this.components);
             this.timerAllyBlue = new System.Windows.Forms.Timer(this.components);
             this.menuStrip_timers = new System.Windows.Forms.MenuStrip();
@@ -43,6 +44,12 @@
             this.timerEnemyBlue = new System.Windows.Forms.Timer(this.components);
             this.timerDrake = new System.Windows.Forms.Timer(this.components);
             this.timerNashor = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox_resetAllyBlue = new System.Windows.Forms.PictureBox();
+            this.pictureBox_resetEnemyRed = new System.Windows.Forms.PictureBox();
+            this.pictureBox_resetEnemyBlue = new System.Windows.Forms.PictureBox();
+            this.pictureBox_resetDrake = new System.Windows.Forms.PictureBox();
+            this.pictureBox_resetNashor = new System.Windows.Forms.PictureBox();
+            this.pictureBox_resetAllyRed = new System.Windows.Forms.PictureBox();
             this.numeric_drake = new Jungler_Timers.myNumericUpDown();
             this.numeric_baronNashor = new Jungler_Timers.myNumericUpDown();
             this.button_drake = new Jungler_Timers.myButton();
@@ -56,6 +63,12 @@
             this.button_allyBlue = new Jungler_Timers.myButton();
             this.button_allyRed = new Jungler_Timers.myButton();
             this.menuStrip_timers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_resetAllyBlue)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_resetEnemyRed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_resetEnemyBlue)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_resetDrake)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_resetNashor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_resetAllyRed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numeric_drake)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numeric_baronNashor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numeric_redEnemyCd)).BeginInit();
@@ -164,6 +177,84 @@
             this.timerNashor.Enabled = true;
             this.timerNashor.Interval = 1000;
             this.timerNashor.Tick += new System.EventHandler(this.timerNashor_Tick);
+            // 
+            // pictureBox_resetAllyBlue
+            // 
+            this.pictureBox_resetAllyBlue.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_resetAllyBlue.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_resetAllyBlue.Image")));
+            this.pictureBox_resetAllyBlue.Location = new System.Drawing.Point(180, 242);
+            this.pictureBox_resetAllyBlue.Name = "pictureBox_resetAllyBlue";
+            this.pictureBox_resetAllyBlue.Size = new System.Drawing.Size(17, 19);
+            this.pictureBox_resetAllyBlue.TabIndex = 21;
+            this.pictureBox_resetAllyBlue.TabStop = false;
+            this.pictureBox_resetAllyBlue.Click += new System.EventHandler(this.pictureBox_resetAllyBlue_Click);
+            this.pictureBox_resetAllyBlue.MouseLeave += new System.EventHandler(this.pictureBox_resetAll_MouseLeave);
+            this.pictureBox_resetAllyBlue.MouseHover += new System.EventHandler(this.pictureBox_resetAllyBlue_MouseHover);
+            // 
+            // pictureBox_resetEnemyRed
+            // 
+            this.pictureBox_resetEnemyRed.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_resetEnemyRed.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_resetEnemyRed.Image")));
+            this.pictureBox_resetEnemyRed.Location = new System.Drawing.Point(550, 113);
+            this.pictureBox_resetEnemyRed.Name = "pictureBox_resetEnemyRed";
+            this.pictureBox_resetEnemyRed.Size = new System.Drawing.Size(17, 19);
+            this.pictureBox_resetEnemyRed.TabIndex = 20;
+            this.pictureBox_resetEnemyRed.TabStop = false;
+            this.pictureBox_resetEnemyRed.Click += new System.EventHandler(this.pictureBox_resetEnemyRed_Click);
+            this.pictureBox_resetEnemyRed.MouseLeave += new System.EventHandler(this.pictureBox_resetAll_MouseLeave);
+            this.pictureBox_resetEnemyRed.MouseHover += new System.EventHandler(this.pictureBox_resetEnemyRed_MouseHover);
+            // 
+            // pictureBox_resetEnemyBlue
+            // 
+            this.pictureBox_resetEnemyBlue.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_resetEnemyBlue.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_resetEnemyBlue.Image")));
+            this.pictureBox_resetEnemyBlue.Location = new System.Drawing.Point(550, 242);
+            this.pictureBox_resetEnemyBlue.Name = "pictureBox_resetEnemyBlue";
+            this.pictureBox_resetEnemyBlue.Size = new System.Drawing.Size(17, 19);
+            this.pictureBox_resetEnemyBlue.TabIndex = 19;
+            this.pictureBox_resetEnemyBlue.TabStop = false;
+            this.pictureBox_resetEnemyBlue.Click += new System.EventHandler(this.pictureBox_resetEnemyBlue_Click);
+            this.pictureBox_resetEnemyBlue.MouseLeave += new System.EventHandler(this.pictureBox_resetAll_MouseLeave);
+            this.pictureBox_resetEnemyBlue.MouseHover += new System.EventHandler(this.pictureBox_resetEnemyBlue_MouseHover);
+            // 
+            // pictureBox_resetDrake
+            // 
+            this.pictureBox_resetDrake.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_resetDrake.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_resetDrake.Image")));
+            this.pictureBox_resetDrake.Location = new System.Drawing.Point(278, 363);
+            this.pictureBox_resetDrake.Name = "pictureBox_resetDrake";
+            this.pictureBox_resetDrake.Size = new System.Drawing.Size(17, 19);
+            this.pictureBox_resetDrake.TabIndex = 18;
+            this.pictureBox_resetDrake.TabStop = false;
+            this.pictureBox_resetDrake.Click += new System.EventHandler(this.pictureBox_resetDrake_Click);
+            this.pictureBox_resetDrake.MouseLeave += new System.EventHandler(this.pictureBox_resetAll_MouseLeave);
+            this.pictureBox_resetDrake.MouseHover += new System.EventHandler(this.pictureBox_resetDrake_MouseHover);
+            // 
+            // pictureBox_resetNashor
+            // 
+            this.pictureBox_resetNashor.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_resetNashor.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_resetNashor.Image")));
+            this.pictureBox_resetNashor.Location = new System.Drawing.Point(490, 363);
+            this.pictureBox_resetNashor.Name = "pictureBox_resetNashor";
+            this.pictureBox_resetNashor.Size = new System.Drawing.Size(17, 19);
+            this.pictureBox_resetNashor.TabIndex = 17;
+            this.pictureBox_resetNashor.TabStop = false;
+            this.pictureBox_resetNashor.Click += new System.EventHandler(this.pictureBox_resetNashor_Click);
+            this.pictureBox_resetNashor.MouseLeave += new System.EventHandler(this.pictureBox_resetAll_MouseLeave);
+            this.pictureBox_resetNashor.MouseHover += new System.EventHandler(this.pictureBox_resetNashor_MouseHover);
+            // 
+            // pictureBox_resetAllyRed
+            // 
+            this.pictureBox_resetAllyRed.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_resetAllyRed.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_resetAllyRed.Image")));
+            this.pictureBox_resetAllyRed.Location = new System.Drawing.Point(180, 112);
+            this.pictureBox_resetAllyRed.Name = "pictureBox_resetAllyRed";
+            this.pictureBox_resetAllyRed.Size = new System.Drawing.Size(17, 19);
+            this.pictureBox_resetAllyRed.TabIndex = 16;
+            this.pictureBox_resetAllyRed.TabStop = false;
+            this.pictureBox_resetAllyRed.Click += new System.EventHandler(this.pictureBox_resetAllyRed_Click);
+            this.pictureBox_resetAllyRed.MouseLeave += new System.EventHandler(this.pictureBox_resetAll_MouseLeave);
+            this.pictureBox_resetAllyRed.MouseHover += new System.EventHandler(this.pictureBox_resetAllyRed_MouseHover);
             // 
             // numeric_drake
             // 
@@ -290,6 +381,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(615, 414);
+            this.Controls.Add(this.pictureBox_resetAllyBlue);
+            this.Controls.Add(this.pictureBox_resetEnemyRed);
+            this.Controls.Add(this.pictureBox_resetEnemyBlue);
+            this.Controls.Add(this.pictureBox_resetDrake);
+            this.Controls.Add(this.pictureBox_resetNashor);
+            this.Controls.Add(this.pictureBox_resetAllyRed);
             this.Controls.Add(this.numeric_drake);
             this.Controls.Add(this.numeric_baronNashor);
             this.Controls.Add(this.button_drake);
@@ -308,6 +405,12 @@
             this.Text = "Jungle Timer";
             this.menuStrip_timers.ResumeLayout(false);
             this.menuStrip_timers.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_resetAllyBlue)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_resetEnemyRed)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_resetEnemyBlue)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_resetDrake)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_resetNashor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_resetAllyRed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numeric_drake)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numeric_baronNashor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numeric_redEnemyCd)).EndInit();
@@ -347,6 +450,12 @@
         private System.Windows.Forms.Timer timerEnemyBlue;
         private System.Windows.Forms.Timer timerDrake;
         private System.Windows.Forms.Timer timerNashor;
+        private System.Windows.Forms.PictureBox pictureBox_resetAllyRed;
+        private System.Windows.Forms.PictureBox pictureBox_resetNashor;
+        private System.Windows.Forms.PictureBox pictureBox_resetDrake;
+        private System.Windows.Forms.PictureBox pictureBox_resetEnemyBlue;
+        private System.Windows.Forms.PictureBox pictureBox_resetEnemyRed;
+        private System.Windows.Forms.PictureBox pictureBox_resetAllyBlue;
     }
 }
 

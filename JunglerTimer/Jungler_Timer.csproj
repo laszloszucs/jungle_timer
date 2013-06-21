@@ -175,6 +175,48 @@
   <ItemGroup>
     <None Include="button.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\sounds\fr\blueBuffAlly0.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\sounds\fr\baronNashor30.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\sounds\fr\blueBuffEnemy30.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\sounds\fr\drake30.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\sounds\fr\redBuffAlly0.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\sounds\fr\redBuffAlly30.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\sounds\fr\redBuffEnemy30.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\sounds\fr\baronNashor0.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\sounds\fr\blueBuffAlly30.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\sounds\fr\frblueBuffAlly0.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\sounds\fr\frblueBuffenemy0.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\sounds\fr\frdrake0.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\sounds\fr\frredBuffEnemy0.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="reset_icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

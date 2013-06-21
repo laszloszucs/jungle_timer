@@ -121,46 +121,85 @@
   <data name="background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\background.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="baronNashor0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\obj\sounds\en\baronNashor0.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="baronNashor30" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\obj\sounds\en\baronNashor30.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="blueBuffAlly0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\obj\sounds\en\blueBuffAlly0.WAV;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="blueBuffAlly30" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\obj\sounds\en\blueBuffAlly30.WAV;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="blueBuffEnemy0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\obj\sounds\en\blueBuffEnemy0.WAV;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="blueBuffEnemy30" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\obj\sounds\en\blueBuffEnemy30.WAV;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="drake0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="enbaronNashor0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\obj\sounds\en\baronNashor0.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="enbaronNashor30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\obj\sounds\en\baronNashor30.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="enblueBuffAlly0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\obj\sounds\en\blueBuffAlly0.WAV;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="enblueBuffAlly30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\obj\sounds\en\blueBuffAlly30.WAV;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="enblueBuffEnemy0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\obj\sounds\en\blueBuffEnemy0.WAV;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="enblueBuffEnemy30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\obj\sounds\en\blueBuffEnemy30.WAV;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="endrake0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\obj\sounds\en\drake0.WAV;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="drake30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="endrake30" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\obj\sounds\en\drake30.WAV;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="enredBuffAlly0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\obj\sounds\en\redBuffAlly0.WAV;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="enredBuffAlly30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\obj\sounds\en\redBuffAlly30.WAV;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="enredBuffEnemy0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\obj\sounds\en\redBuffEnemy0.WAV;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="enredBuffEnemy30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\obj\sounds\en\redBuffEnemy30.WAV;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="frbaronNashor0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\obj\sounds\fr\baronNashor0.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="frbaronNashor30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\obj\sounds\fr\baronNashor30.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="frblueBuffAlly0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\obj\sounds\fr\frblueBuffAlly0.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="frblueBuffAlly30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\obj\sounds\fr\blueBuffAlly30.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="frblueBuffEnemy0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\obj\sounds\fr\frblueBuffenemy0.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="frblueBuffEnemy30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\obj\sounds\fr\blueBuffEnemy30.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="frdrake0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\obj\sounds\fr\frdrake0.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="frdrake30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\obj\sounds\fr\drake30.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="frredBuffAlly0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\obj\sounds\fr\redBuffAlly0.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="frredBuffAlly30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\obj\sounds\fr\redBuffAlly30.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="frredBuffEnemy0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\obj\sounds\fr\frredBuffEnemy0.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="frredBuffEnemy30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\obj\sounds\fr\redBuffEnemy30.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="redBuffAlly0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\obj\sounds\en\redBuffAlly0.WAV;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="redBuffAlly30" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\obj\sounds\en\redBuffAlly30.WAV;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="redBuffEnemy0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\obj\sounds\en\redBuffEnemy0.WAV;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="redBuffEnemy30" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\obj\sounds\en\redBuffEnemy30.WAV;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="reset_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\reset_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

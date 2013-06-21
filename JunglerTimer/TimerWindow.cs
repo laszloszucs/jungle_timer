@@ -16,10 +16,9 @@ namespace Jungler_Timers
 {
     public partial class timerJungle : Form
     {
-        static int language = 2;
-        static String project_name = Path.GetFileName(Assembly.GetExecutingAssembly().Location);
-        static String path = Directory.GetCurrentDirectory();
-        List<KeyValuePair<int, SoundPlayer>> soundsList = new List<KeyValuePair<int, SoundPlayer>>();
+        static int languageSelected = 2;
+        List<KeyValuePair<int, SoundPlayer>> soundListFr = new List<KeyValuePair<int, SoundPlayer>>();
+        List<KeyValuePair<int, SoundPlayer>> soundListEn = new List<KeyValuePair<int, SoundPlayer>>();
         globalKeyboardHook ghk = new globalKeyboardHook();
 
         #region enums
@@ -47,7 +46,7 @@ namespace Jungler_Timers
 
         public void initialization()
         {
-            initAllNumeric();
+            initAllWindow();
             resetAllTimers();
             initLanguages();
             initMessages();
@@ -60,27 +59,74 @@ namespace Jungler_Timers
         {
             if (chosenLanguage == 1)
             {
-                language = 1;
+                languageSelected = 1;
                 francaisToolStripMenuItem.Checked = true;
                 englishToolStripMenuItem.Checked = false;
+                switchMessages((int)languages.francais);
+                toolStrip_pauseAllTimers.Text = "Stopper les timers";
+                toolStrip_resetAllTimers.Text = "Remettre à zéro les timers";
+                languageToolStripMenuItem.Text = "Langue";
             }
             else if (chosenLanguage == 2)
             {
-                language = 2;
+                languageSelected = 2;
                 englishToolStripMenuItem.Checked = true;
                 francaisToolStripMenuItem.Checked = false;
+                switchMessages((int)languages.english);
+                toolStrip_pauseAllTimers.Text = "Pause all timers";
+                toolStrip_resetAllTimers.Text = "Reset all timers";
+                languageToolStripMenuItem.Text = "Language";
+            }
+        }
+
+        private void switchMessages(int selectedLanguage)
+        {
+            if (selectedLanguage == (int)languages.francais)
+            {
+                button_allyBlue.Text = "Buff bleu allié";
+                button_allyRed.Text = "Buff rouge allié";
+                button_enemyBlue.Text = "Buff bleu ennemi";
+                button_enemyRed.Text = "Buff rouge ennemi";
+                button_drake.Text = "Timer drake";
+                button_baronNashor.Text = "Timer baron Nashor";
+            }
+            else
+            {
+                button_allyBlue.Text = "Allies blue timer";
+                button_allyRed.Text = "Allies red timer";
+                button_enemyBlue.Text = "Enemies blue timer";
+                button_enemyRed.Text = "Enemies red timer";
+                button_drake.Text = "Drake timer";
+                button_baronNashor.Text = "Baron Nashor timer";
             }
         }
 
         private void playMessage(int messageID)
         {
-            SoundPlayer sound = null;
-            foreach (KeyValuePair<int, SoundPlayer> item in soundsList)
+            try
             {
-                if (messageID == item.Key)
-                    sound = item.Value;
+                SoundPlayer sound = null;
+                List<KeyValuePair<int, SoundPlayer>> temp = null;
+                if (languageSelected == (int)languages.francais)
+                    temp = soundListFr;
+                else
+                    temp = soundListEn;
+
+                foreach (KeyValuePair<int, SoundPlayer> item in temp)
+                {
+                    if (messageID == item.Key)
+                    {
+                        sound = item.Value;
+                        sound.Play();
+                        return;
+                    }
+                }
+                throw new Exception("Requested sound was not found");
             }
-            sound.Play();
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
         }
 
         #region keypressed
@@ -184,51 +230,66 @@ namespace Jungler_Timers
 
         private void initMessages()
         {
-            project_name = project_name.Substring(0, project_name.Length - 4);
-            if (project_name.Contains(" "))
-                project_name = project_name.Trim();
+            /* Init fr sound list */
+            soundListFr.Add(new KeyValuePair<int, SoundPlayer>(1, new SoundPlayer(Jungler_Timers.Properties.Resources.frredBuffAlly30)));
+            soundListFr.Add(new KeyValuePair<int, SoundPlayer>(2, new SoundPlayer(Jungler_Timers.Properties.Resources.frredBuffAlly0)));
+            soundListFr.Add(new KeyValuePair<int, SoundPlayer>(3, new SoundPlayer(Jungler_Timers.Properties.Resources.frblueBuffAlly30)));
+            soundListFr.Add(new KeyValuePair<int, SoundPlayer>(4, new SoundPlayer(Jungler_Timers.Properties.Resources.frblueBuffAlly0)));
+            soundListFr.Add(new KeyValuePair<int, SoundPlayer>(5, new SoundPlayer(Jungler_Timers.Properties.Resources.frredBuffEnemy30)));
+            soundListFr.Add(new KeyValuePair<int, SoundPlayer>(6, new SoundPlayer(Jungler_Timers.Properties.Resources.frredBuffEnemy0)));
+            soundListFr.Add(new KeyValuePair<int, SoundPlayer>(7, new SoundPlayer(Jungler_Timers.Properties.Resources.frblueBuffEnemy30)));
+            soundListFr.Add(new KeyValuePair<int, SoundPlayer>(8, new SoundPlayer(Jungler_Timers.Properties.Resources.frblueBuffEnemy0)));
+            soundListFr.Add(new KeyValuePair<int, SoundPlayer>(9, new SoundPlayer(Jungler_Timers.Properties.Resources.frdrake30)));
+            soundListFr.Add(new KeyValuePair<int, SoundPlayer>(10, new SoundPlayer(Jungler_Timers.Properties.Resources.frdrake0)));
+            soundListFr.Add(new KeyValuePair<int, SoundPlayer>(11, new SoundPlayer(Jungler_Timers.Properties.Resources.frbaronNashor30)));
+            soundListFr.Add(new KeyValuePair<int, SoundPlayer>(12, new SoundPlayer(Jungler_Timers.Properties.Resources.frbaronNashor0)));
 
-            soundsList.Add(new KeyValuePair<int, SoundPlayer>(1, new SoundPlayer(Jungler_Timers.Properties.Resources.redBuffAlly30)));
-            soundsList.Add(new KeyValuePair<int, SoundPlayer>(2, new SoundPlayer(Jungler_Timers.Properties.Resources.redBuffAlly0)));
-            soundsList.Add(new KeyValuePair<int, SoundPlayer>(3, new SoundPlayer(Jungler_Timers.Properties.Resources.blueBuffAlly30)));
-            soundsList.Add(new KeyValuePair<int, SoundPlayer>(4, new SoundPlayer(Jungler_Timers.Properties.Resources.blueBuffAlly0)));
-            soundsList.Add(new KeyValuePair<int, SoundPlayer>(5, new SoundPlayer(Jungler_Timers.Properties.Resources.redBuffEnemy30)));
-            soundsList.Add(new KeyValuePair<int, SoundPlayer>(6, new SoundPlayer(Jungler_Timers.Properties.Resources.redBuffEnemy0)));
-            soundsList.Add(new KeyValuePair<int, SoundPlayer>(7, new SoundPlayer(Jungler_Timers.Properties.Resources.blueBuffEnemy30)));
-            soundsList.Add(new KeyValuePair<int, SoundPlayer>(8, new SoundPlayer(Jungler_Timers.Properties.Resources.blueBuffEnemy0)));
-            soundsList.Add(new KeyValuePair<int, SoundPlayer>(9, new SoundPlayer(Jungler_Timers.Properties.Resources.drake30)));
-            soundsList.Add(new KeyValuePair<int, SoundPlayer>(10, new SoundPlayer(Jungler_Timers.Properties.Resources.drake0)));
-            soundsList.Add(new KeyValuePair<int, SoundPlayer>(11, new SoundPlayer(Jungler_Timers.Properties.Resources.baronNashor30)));
-            soundsList.Add(new KeyValuePair<int, SoundPlayer>(12, new SoundPlayer(Jungler_Timers.Properties.Resources.baronNashor0)));
+            /* Init en sound list */
+            soundListEn.Add(new KeyValuePair<int, SoundPlayer>(1, new SoundPlayer(Jungler_Timers.Properties.Resources.enredBuffAlly30)));
+            soundListEn.Add(new KeyValuePair<int, SoundPlayer>(2, new SoundPlayer(Jungler_Timers.Properties.Resources.enredBuffAlly0)));
+            soundListEn.Add(new KeyValuePair<int, SoundPlayer>(3, new SoundPlayer(Jungler_Timers.Properties.Resources.enblueBuffAlly30)));
+            soundListEn.Add(new KeyValuePair<int, SoundPlayer>(4, new SoundPlayer(Jungler_Timers.Properties.Resources.enblueBuffAlly0)));
+            soundListEn.Add(new KeyValuePair<int, SoundPlayer>(5, new SoundPlayer(Jungler_Timers.Properties.Resources.enredBuffEnemy30)));
+            soundListEn.Add(new KeyValuePair<int, SoundPlayer>(6, new SoundPlayer(Jungler_Timers.Properties.Resources.enredBuffEnemy0)));
+            soundListEn.Add(new KeyValuePair<int, SoundPlayer>(7, new SoundPlayer(Jungler_Timers.Properties.Resources.enblueBuffEnemy30)));
+            soundListEn.Add(new KeyValuePair<int, SoundPlayer>(8, new SoundPlayer(Jungler_Timers.Properties.Resources.enblueBuffEnemy0)));
+            soundListEn.Add(new KeyValuePair<int, SoundPlayer>(9, new SoundPlayer(Jungler_Timers.Properties.Resources.endrake30)));
+            soundListEn.Add(new KeyValuePair<int, SoundPlayer>(10, new SoundPlayer(Jungler_Timers.Properties.Resources.endrake0)));
+            soundListEn.Add(new KeyValuePair<int, SoundPlayer>(11, new SoundPlayer(Jungler_Timers.Properties.Resources.enbaronNashor30)));
+            soundListEn.Add(new KeyValuePair<int, SoundPlayer>(12, new SoundPlayer(Jungler_Timers.Properties.Resources.enbaronNashor0)));
         }
 
         private void initLanguages()
         {
-            if (language == (int)languages.francais)
+            if (languageSelected == (int)languages.francais)
             {
                 francaisToolStripMenuItem.Checked = true;
                 englishToolStripMenuItem.Checked = false;
             }
-            else if (language == (int)languages.english)
+            else if (languageSelected == (int)languages.english)
             {
                 englishToolStripMenuItem.Checked = true;
                 francaisToolStripMenuItem.Checked = false;
             }
         }
 
-        private void initAllNumeric()
+        private void initAllWindow()
         {
+            /* Init Form window */
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            System.Drawing.Icon icon = System.Drawing.Icon.FromHandle(Jungler_Timers.Properties.Resources.icon.GetHicon());
             this.BackgroundImage = Jungler_Timers.Properties.Resources.background;
-            this.Icon = icon;
+            this.Icon = System.Drawing.Icon.FromHandle(Jungler_Timers.Properties.Resources.icon.GetHicon());
+
+            /* Init buttons */
             button_allyRed.BackgroundImage = Jungler_Timers.Properties.Resources.button;
             button_allyBlue.BackgroundImage = Jungler_Timers.Properties.Resources.button;
             button_baronNashor.BackgroundImage = Jungler_Timers.Properties.Resources.button;
             button_drake.BackgroundImage = Jungler_Timers.Properties.Resources.button;
             button_enemyBlue.BackgroundImage = Jungler_Timers.Properties.Resources.button;
             button_enemyRed.BackgroundImage = Jungler_Timers.Properties.Resources.button;
+
+            /* Init numeric boxes*/
             numeric_redAllieCd.ReadOnly = true;
             numeric_blueAllieCd.ReadOnly = true;
             numeric_redEnemyCd.ReadOnly = true;
@@ -247,6 +308,8 @@ namespace Jungler_Timers
             numeric_blueEnemyCd.Minimum = 0;
             numeric_redAllieCd.Minimum = 0;
             numeric_redEnemyCd.Minimum = 0;
+
+            /* Init delays */
             numeric_drake.Maximum = (int)delays.drake;
             numeric_baronNashor.Maximum = (int)delays.baron;
             numeric_blueAllieCd.Maximum = (int)delays.buffs;
@@ -301,17 +364,19 @@ namespace Jungler_Timers
 
         private void francaisToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            switchLanguage((int)languages.francais);
+            if (languageSelected != (int)languages.francais)
+                switchLanguage((int)languages.francais);
         }
 
         private void englishToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            switchLanguage((int)languages.english);
+            if (languageSelected != (int)languages.english)
+                switchLanguage((int)languages.english);
         }
 
         private void timerRedAllies_Tick(object sender, EventArgs e)
         {
-            if (numeric_redAllieCd.Value == 32)
+            if (numeric_redAllieCd.Value == 297)
                 playMessage(1);
             else if (numeric_redAllieCd.Value == 2)
                 playMessage(2);
@@ -491,6 +556,90 @@ namespace Jungler_Timers
             }
         }
 
+        private void pictureBox_resetAllyRed_Click(object sender, EventArgs e)
+        {
+            timerAllyRed.Stop();
+            numeric_redAllieCd.Value = (int)delays.buffs;
+            button_allyRed.state = 0;
+        }
 
+        private void pictureBox_resetAllyBlue_Click(object sender, EventArgs e)
+        {
+            timerAllyBlue.Stop();
+            numeric_blueAllieCd.Value = (int)delays.buffs;
+            button_allyBlue.state = 0;
+        }
+
+        private void pictureBox_resetEnemyRed_Click(object sender, EventArgs e)
+        {
+            timerEnemyRed.Stop();
+            numeric_redEnemyCd.Value = (int)delays.buffs;
+            button_enemyRed.state = 0;
+        }
+
+        private void pictureBox_resetEnemyBlue_Click(object sender, EventArgs e)
+        {
+            timerEnemyBlue.Stop();
+            numeric_blueEnemyCd.Value = (int)delays.buffs;
+            button_enemyBlue.state = 0;
+        }
+
+        private void pictureBox_resetNashor_Click(object sender, EventArgs e)
+        {
+            timerDrake.Stop();
+            numeric_drake.Value = (int)delays.buffs;
+            button_drake.state = 0;
+        }
+
+        private void pictureBox_resetDrake_Click(object sender, EventArgs e)
+        {
+            timerNashor.Stop();
+            numeric_baronNashor.Value = (int)delays.buffs;
+            button_baronNashor.state = 0;
+        }
+
+        private void pictureBox_resetEnemyRed_MouseHover(object sender, EventArgs e)
+        {
+            pictureBox_resetEnemyRed.BorderStyle = BorderStyle.FixedSingle;
+        }
+
+        private void pictureBox_resetDrake_MouseHover(object sender, EventArgs e)
+        {
+            pictureBox_resetDrake.BorderStyle = BorderStyle.FixedSingle;
+        }
+
+        private void pictureBox_resetNashor_MouseHover(object sender, EventArgs e)
+        {
+            pictureBox_resetNashor.BorderStyle = BorderStyle.FixedSingle;
+
+        }
+
+        private void pictureBox_resetEnemyBlue_MouseHover(object sender, EventArgs e)
+        {
+            pictureBox_resetEnemyBlue.BorderStyle = BorderStyle.FixedSingle;
+
+        }
+
+        private void pictureBox_resetAllyRed_MouseHover(object sender, EventArgs e)
+        {
+            pictureBox_resetAllyRed.BorderStyle = BorderStyle.FixedSingle;
+
+        }
+
+        private void pictureBox_resetAllyBlue_MouseHover(object sender, EventArgs e)
+        {
+            pictureBox_resetAllyBlue.BorderStyle = BorderStyle.FixedSingle;
+
+        }
+
+        private void pictureBox_resetAll_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox_resetAllyBlue.BorderStyle = BorderStyle.None;
+            pictureBox_resetAllyRed.BorderStyle = BorderStyle.None;
+            pictureBox_resetEnemyBlue.BorderStyle = BorderStyle.None;
+            pictureBox_resetNashor.BorderStyle = BorderStyle.None;
+            pictureBox_resetDrake.BorderStyle = BorderStyle.None;
+            pictureBox_resetEnemyRed.BorderStyle = BorderStyle.None;
+        }
     }
 }
