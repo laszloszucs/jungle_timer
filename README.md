@@ -21,4 +21,8 @@ F5 to start drake countdown
 
 F6 to start baron Nashor countdown
 
+F7 to pause all timers
+
+F8 to reset all timers
+
 Vocal announces will start 30 seconds before buff respawns and when it respawns.
