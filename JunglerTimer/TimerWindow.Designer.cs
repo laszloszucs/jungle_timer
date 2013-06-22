@@ -112,15 +112,15 @@
             // toolStrip_pauseAllTimers
             // 
             this.toolStrip_pauseAllTimers.Name = "toolStrip_pauseAllTimers";
-            this.toolStrip_pauseAllTimers.Size = new System.Drawing.Size(156, 22);
-            this.toolStrip_pauseAllTimers.Text = "Pause all timers";
+            this.toolStrip_pauseAllTimers.Size = new System.Drawing.Size(198, 22);
+            this.toolStrip_pauseAllTimers.Text = "Pause all timers          F7";
             this.toolStrip_pauseAllTimers.Click += new System.EventHandler(this.toolStrip_pauseAllTimers_Click);
             // 
             // toolStrip_resetAllTimers
             // 
             this.toolStrip_resetAllTimers.Name = "toolStrip_resetAllTimers";
-            this.toolStrip_resetAllTimers.Size = new System.Drawing.Size(156, 22);
-            this.toolStrip_resetAllTimers.Text = "Reset all timers";
+            this.toolStrip_resetAllTimers.Size = new System.Drawing.Size(198, 22);
+            this.toolStrip_resetAllTimers.Text = "Reset all timers           F8";
             this.toolStrip_resetAllTimers.Click += new System.EventHandler(this.toolStrip_resetAllTimers_Click);
             // 
             // optionsToolStripMenuItem

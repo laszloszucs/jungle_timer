@@ -211,6 +211,10 @@ namespace Jungler_Timers
                     button_baronNashor.state = 0;
                 }
             }
+            else if (e.KeyData == Keys.F7)
+                pauseAllTimers();
+            else if (e.KeyData == Keys.F8)
+                resetAllTimers();
         }
 
         #endregion
@@ -225,6 +229,8 @@ namespace Jungler_Timers
             ghk.HookedKeys.Add(Keys.F4);
             ghk.HookedKeys.Add(Keys.F5);
             ghk.HookedKeys.Add(Keys.F6);
+            ghk.HookedKeys.Add(Keys.F7);
+            ghk.HookedKeys.Add(Keys.F8);
             ghk.KeyUp += new KeyEventHandler(ghk_KeyUp);
         }
 
