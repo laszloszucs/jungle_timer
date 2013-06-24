@@ -1,7 +1,7 @@
 jungle_timer
 ============
 
-A small app to countodwn buffs, dragon and baron's respawn times in League of Legends
+A small app to countdown buffs, dragon and baron's respawn times in League of Legends
 
 ------------- README -------------
 
