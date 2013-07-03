@@ -25,6 +25,6 @@ F7 to pause all timers
 
 F8 to reset all timers
 
-Vocal announces will start 30 seconds before buff respawns and when it respawns.
+Vocal queues are used 30 before up time and when the buffs respawn.
 
 NB : If you have troubles getting keys macros working, try running this program as administrator (right click on the program and then "run as administrator").
