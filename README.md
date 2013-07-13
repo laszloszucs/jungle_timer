@@ -9,22 +9,24 @@ This application is still in beta-test, feel free to give your feedback at maxim
 
 Keys to use :
 
-F1 to start your red buff countdown
+1 to start your red buff countdown
 
-F2 to start your blue buff countdown
+2 to start your blue buff countdown
 
-F3 to start enemy red buff countdown
+3 to start enemy red buff countdown
 
-F4 to start enemy blue buff countdown
+4 to start enemy blue buff countdown
 
-F5 to start drake countdown
+5 to start drake countdown
 
-F6 to start baron Nashor countdown
+6 to start baron Nashor countdown
 
-F7 to pause all timers
+7 to pause all timers
 
-F8 to reset all timers
+8 to reset all timers
 
 Vocal queues are used 30 before up time and when the buffs respawn.
+
+NEW : You can now configure your own keys !
 
 NB : If you have troubles getting keys macros working, try running this program as administrator (right click on the program and then "run as administrator").
