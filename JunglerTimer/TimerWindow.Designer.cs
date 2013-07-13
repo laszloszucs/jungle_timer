@@ -50,6 +50,18 @@
             this.pictureBox_resetDrake = new System.Windows.Forms.PictureBox();
             this.pictureBox_resetNashor = new System.Windows.Forms.PictureBox();
             this.pictureBox_resetAllyRed = new System.Windows.Forms.PictureBox();
+            this.labelRedEnemy = new System.Windows.Forms.Label();
+            this.labelBlueEnemy = new System.Windows.Forms.Label();
+            this.labelRedAllie = new System.Windows.Forms.Label();
+            this.labelBlueAllie = new System.Windows.Forms.Label();
+            this.labelDrake = new System.Windows.Forms.Label();
+            this.labelNashor = new System.Windows.Forms.Label();
+            this.buttonNashorKey = new Jungler_Timers.myButton();
+            this.buttonDrakeKey = new Jungler_Timers.myButton();
+            this.buttonBlueEnemyKey = new Jungler_Timers.myButton();
+            this.buttonRedEnemyKey = new Jungler_Timers.myButton();
+            this.buttonBlueAllieKey = new Jungler_Timers.myButton();
+            this.buttonRedAllieKey = new Jungler_Timers.myButton();
             this.numeric_drake = new Jungler_Timers.myNumericUpDown();
             this.numeric_baronNashor = new Jungler_Timers.myNumericUpDown();
             this.button_drake = new Jungler_Timers.myButton();
@@ -96,7 +108,7 @@
             this.optionsToolStripMenuItem});
             this.menuStrip_timers.Location = new System.Drawing.Point(0, 0);
             this.menuStrip_timers.Name = "menuStrip_timers";
-            this.menuStrip_timers.Size = new System.Drawing.Size(615, 24);
+            this.menuStrip_timers.Size = new System.Drawing.Size(636, 24);
             this.menuStrip_timers.TabIndex = 1;
             this.menuStrip_timers.Text = "menuStrip1";
             // 
@@ -182,7 +194,7 @@
             // 
             this.pictureBox_resetAllyBlue.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox_resetAllyBlue.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_resetAllyBlue.Image")));
-            this.pictureBox_resetAllyBlue.Location = new System.Drawing.Point(180, 242);
+            this.pictureBox_resetAllyBlue.Location = new System.Drawing.Point(200, 242);
             this.pictureBox_resetAllyBlue.Name = "pictureBox_resetAllyBlue";
             this.pictureBox_resetAllyBlue.Size = new System.Drawing.Size(17, 19);
             this.pictureBox_resetAllyBlue.TabIndex = 21;
@@ -247,7 +259,7 @@
             // 
             this.pictureBox_resetAllyRed.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox_resetAllyRed.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_resetAllyRed.Image")));
-            this.pictureBox_resetAllyRed.Location = new System.Drawing.Point(180, 112);
+            this.pictureBox_resetAllyRed.Location = new System.Drawing.Point(200, 111);
             this.pictureBox_resetAllyRed.Name = "pictureBox_resetAllyRed";
             this.pictureBox_resetAllyRed.Size = new System.Drawing.Size(17, 19);
             this.pictureBox_resetAllyRed.TabIndex = 16;
@@ -255,6 +267,156 @@
             this.pictureBox_resetAllyRed.Click += new System.EventHandler(this.pictureBox_resetAllyRed_Click);
             this.pictureBox_resetAllyRed.MouseLeave += new System.EventHandler(this.pictureBox_resetAll_MouseLeave);
             this.pictureBox_resetAllyRed.MouseHover += new System.EventHandler(this.pictureBox_resetAllyRed_MouseHover);
+            // 
+            // labelRedEnemy
+            // 
+            this.labelRedEnemy.AutoSize = true;
+            this.labelRedEnemy.BackColor = System.Drawing.Color.Transparent;
+            this.labelRedEnemy.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.labelRedEnemy.ForeColor = System.Drawing.Color.White;
+            this.labelRedEnemy.Location = new System.Drawing.Point(547, 65);
+            this.labelRedEnemy.Name = "labelRedEnemy";
+            this.labelRedEnemy.Size = new System.Drawing.Size(38, 13);
+            this.labelRedEnemy.TabIndex = 31;
+            this.labelRedEnemy.Text = "label1";
+            // 
+            // labelBlueEnemy
+            // 
+            this.labelBlueEnemy.AutoSize = true;
+            this.labelBlueEnemy.BackColor = System.Drawing.Color.Transparent;
+            this.labelBlueEnemy.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.labelBlueEnemy.ForeColor = System.Drawing.Color.White;
+            this.labelBlueEnemy.Location = new System.Drawing.Point(547, 192);
+            this.labelBlueEnemy.Name = "labelBlueEnemy";
+            this.labelBlueEnemy.Size = new System.Drawing.Size(38, 13);
+            this.labelBlueEnemy.TabIndex = 32;
+            this.labelBlueEnemy.Text = "label2";
+            // 
+            // labelRedAllie
+            // 
+            this.labelRedAllie.AutoSize = true;
+            this.labelRedAllie.BackColor = System.Drawing.Color.Transparent;
+            this.labelRedAllie.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.labelRedAllie.ForeColor = System.Drawing.Color.White;
+            this.labelRedAllie.Location = new System.Drawing.Point(4, 65);
+            this.labelRedAllie.Name = "labelRedAllie";
+            this.labelRedAllie.Size = new System.Drawing.Size(38, 13);
+            this.labelRedAllie.TabIndex = 33;
+            this.labelRedAllie.Text = "label3";
+            // 
+            // labelBlueAllie
+            // 
+            this.labelBlueAllie.AutoSize = true;
+            this.labelBlueAllie.BackColor = System.Drawing.Color.Transparent;
+            this.labelBlueAllie.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.labelBlueAllie.ForeColor = System.Drawing.Color.White;
+            this.labelBlueAllie.Location = new System.Drawing.Point(4, 192);
+            this.labelBlueAllie.Name = "labelBlueAllie";
+            this.labelBlueAllie.Size = new System.Drawing.Size(38, 13);
+            this.labelBlueAllie.TabIndex = 34;
+            this.labelBlueAllie.Text = "label4";
+            // 
+            // labelDrake
+            // 
+            this.labelDrake.AutoSize = true;
+            this.labelDrake.BackColor = System.Drawing.Color.Transparent;
+            this.labelDrake.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.labelDrake.ForeColor = System.Drawing.Color.White;
+            this.labelDrake.Location = new System.Drawing.Point(85, 322);
+            this.labelDrake.Name = "labelDrake";
+            this.labelDrake.Size = new System.Drawing.Size(38, 13);
+            this.labelDrake.TabIndex = 35;
+            this.labelDrake.Text = "label5";
+            // 
+            // labelNashor
+            // 
+            this.labelNashor.AutoSize = true;
+            this.labelNashor.BackColor = System.Drawing.Color.Transparent;
+            this.labelNashor.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.labelNashor.ForeColor = System.Drawing.Color.White;
+            this.labelNashor.Location = new System.Drawing.Point(490, 322);
+            this.labelNashor.Name = "labelNashor";
+            this.labelNashor.Size = new System.Drawing.Size(38, 13);
+            this.labelNashor.TabIndex = 36;
+            this.labelNashor.Text = "label6";
+            // 
+            // buttonNashorKey
+            // 
+            this.buttonNashorKey.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.buttonNashorKey.ForeColor = System.Drawing.Color.White;
+            this.buttonNashorKey.Location = new System.Drawing.Point(381, 389);
+            this.buttonNashorKey.Name = "buttonNashorKey";
+            this.buttonNashorKey.Size = new System.Drawing.Size(75, 23);
+            this.buttonNashorKey.state = 0;
+            this.buttonNashorKey.TabIndex = 29;
+            this.buttonNashorKey.Text = "button6";
+            this.buttonNashorKey.UseVisualStyleBackColor = true;
+            this.buttonNashorKey.Click += new System.EventHandler(this.buttonNashorKey_Click);
+            // 
+            // buttonDrakeKey
+            // 
+            this.buttonDrakeKey.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.buttonDrakeKey.ForeColor = System.Drawing.Color.White;
+            this.buttonDrakeKey.Location = new System.Drawing.Point(168, 389);
+            this.buttonDrakeKey.Name = "buttonDrakeKey";
+            this.buttonDrakeKey.Size = new System.Drawing.Size(75, 23);
+            this.buttonDrakeKey.state = 0;
+            this.buttonDrakeKey.TabIndex = 28;
+            this.buttonDrakeKey.Text = "button5";
+            this.buttonDrakeKey.UseVisualStyleBackColor = true;
+            this.buttonDrakeKey.Click += new System.EventHandler(this.buttonDrakeKey_Click);
+            // 
+            // buttonBlueEnemyKey
+            // 
+            this.buttonBlueEnemyKey.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.buttonBlueEnemyKey.ForeColor = System.Drawing.Color.White;
+            this.buttonBlueEnemyKey.Location = new System.Drawing.Point(446, 268);
+            this.buttonBlueEnemyKey.Name = "buttonBlueEnemyKey";
+            this.buttonBlueEnemyKey.Size = new System.Drawing.Size(75, 23);
+            this.buttonBlueEnemyKey.state = 0;
+            this.buttonBlueEnemyKey.TabIndex = 27;
+            this.buttonBlueEnemyKey.Text = "button4";
+            this.buttonBlueEnemyKey.UseVisualStyleBackColor = true;
+            this.buttonBlueEnemyKey.Click += new System.EventHandler(this.buttonBlueEnemyKey_Click);
+            // 
+            // buttonRedEnemyKey
+            // 
+            this.buttonRedEnemyKey.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.buttonRedEnemyKey.ForeColor = System.Drawing.Color.White;
+            this.buttonRedEnemyKey.Location = new System.Drawing.Point(446, 138);
+            this.buttonRedEnemyKey.Name = "buttonRedEnemyKey";
+            this.buttonRedEnemyKey.Size = new System.Drawing.Size(75, 23);
+            this.buttonRedEnemyKey.state = 0;
+            this.buttonRedEnemyKey.TabIndex = 26;
+            this.buttonRedEnemyKey.Text = "button3";
+            this.buttonRedEnemyKey.UseVisualStyleBackColor = true;
+            this.buttonRedEnemyKey.Click += new System.EventHandler(this.buttonRedEnemyKey_Click);
+            // 
+            // buttonBlueAllieKey
+            // 
+            this.buttonBlueAllieKey.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.buttonBlueAllieKey.ForeColor = System.Drawing.Color.White;
+            this.buttonBlueAllieKey.Location = new System.Drawing.Point(98, 267);
+            this.buttonBlueAllieKey.Name = "buttonBlueAllieKey";
+            this.buttonBlueAllieKey.Size = new System.Drawing.Size(75, 23);
+            this.buttonBlueAllieKey.state = 0;
+            this.buttonBlueAllieKey.TabIndex = 25;
+            this.buttonBlueAllieKey.Text = "button1";
+            this.buttonBlueAllieKey.UseVisualStyleBackColor = true;
+            this.buttonBlueAllieKey.Click += new System.EventHandler(this.buttonBlueAllieKey_Click);
+            // 
+            // buttonRedAllieKey
+            // 
+            this.buttonRedAllieKey.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.buttonRedAllieKey.ForeColor = System.Drawing.Color.White;
+            this.buttonRedAllieKey.Location = new System.Drawing.Point(98, 137);
+            this.buttonRedAllieKey.Name = "buttonRedAllieKey";
+            this.buttonRedAllieKey.Size = new System.Drawing.Size(75, 23);
+            this.buttonRedAllieKey.state = 0;
+            this.buttonRedAllieKey.TabIndex = 24;
+            this.buttonRedAllieKey.Text = "button2";
+            this.buttonRedAllieKey.UseVisualStyleBackColor = true;
+            this.buttonRedAllieKey.Click += new System.EventHandler(this.buttonRedAllieKey_Click);
             // 
             // numeric_drake
             // 
@@ -338,14 +500,14 @@
             // 
             // numeric_blueAllieCd
             // 
-            this.numeric_blueAllieCd.Location = new System.Drawing.Point(48, 242);
+            this.numeric_blueAllieCd.Location = new System.Drawing.Point(69, 241);
             this.numeric_blueAllieCd.Name = "numeric_blueAllieCd";
             this.numeric_blueAllieCd.Size = new System.Drawing.Size(125, 20);
             this.numeric_blueAllieCd.TabIndex = 7;
             // 
             // numeric_redAllieCd
             // 
-            this.numeric_redAllieCd.Location = new System.Drawing.Point(48, 112);
+            this.numeric_redAllieCd.Location = new System.Drawing.Point(69, 111);
             this.numeric_redAllieCd.Name = "numeric_redAllieCd";
             this.numeric_redAllieCd.Size = new System.Drawing.Size(125, 20);
             this.numeric_redAllieCd.TabIndex = 6;
@@ -354,7 +516,7 @@
             // 
             this.button_allyBlue.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_allyBlue.ForeColor = System.Drawing.Color.White;
-            this.button_allyBlue.Location = new System.Drawing.Point(48, 181);
+            this.button_allyBlue.Location = new System.Drawing.Point(69, 181);
             this.button_allyBlue.Name = "button_allyBlue";
             this.button_allyBlue.Size = new System.Drawing.Size(125, 35);
             this.button_allyBlue.state = 0;
@@ -367,7 +529,7 @@
             // 
             this.button_allyRed.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_allyRed.ForeColor = System.Drawing.Color.White;
-            this.button_allyRed.Location = new System.Drawing.Point(48, 54);
+            this.button_allyRed.Location = new System.Drawing.Point(69, 54);
             this.button_allyRed.Name = "button_allyRed";
             this.button_allyRed.Size = new System.Drawing.Size(125, 35);
             this.button_allyRed.state = 0;
@@ -380,7 +542,19 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(615, 414);
+            this.ClientSize = new System.Drawing.Size(636, 467);
+            this.Controls.Add(this.labelNashor);
+            this.Controls.Add(this.labelDrake);
+            this.Controls.Add(this.labelBlueAllie);
+            this.Controls.Add(this.labelRedAllie);
+            this.Controls.Add(this.labelBlueEnemy);
+            this.Controls.Add(this.labelRedEnemy);
+            this.Controls.Add(this.buttonNashorKey);
+            this.Controls.Add(this.buttonDrakeKey);
+            this.Controls.Add(this.buttonBlueEnemyKey);
+            this.Controls.Add(this.buttonRedEnemyKey);
+            this.Controls.Add(this.buttonBlueAllieKey);
+            this.Controls.Add(this.buttonRedAllieKey);
             this.Controls.Add(this.pictureBox_resetAllyBlue);
             this.Controls.Add(this.pictureBox_resetEnemyRed);
             this.Controls.Add(this.pictureBox_resetEnemyBlue);
@@ -456,6 +630,18 @@
         private System.Windows.Forms.PictureBox pictureBox_resetEnemyBlue;
         private System.Windows.Forms.PictureBox pictureBox_resetEnemyRed;
         private System.Windows.Forms.PictureBox pictureBox_resetAllyBlue;
+        private myButton buttonRedAllieKey;
+        private myButton buttonBlueAllieKey;
+        private myButton buttonRedEnemyKey;
+        private myButton buttonBlueEnemyKey;
+        private myButton buttonDrakeKey;
+        private myButton buttonNashorKey;
+        private System.Windows.Forms.Label labelRedEnemy;
+        private System.Windows.Forms.Label labelBlueEnemy;
+        private System.Windows.Forms.Label labelRedAllie;
+        private System.Windows.Forms.Label labelBlueAllie;
+        private System.Windows.Forms.Label labelDrake;
+        private System.Windows.Forms.Label labelNashor;
     }
 }
 

@@ -19,7 +19,17 @@ namespace Jungler_Timers
         static int languageSelected = 2;
         List<KeyValuePair<int, SoundPlayer>> soundListFr = new List<KeyValuePair<int, SoundPlayer>>();
         List<KeyValuePair<int, SoundPlayer>> soundListEn = new List<KeyValuePair<int, SoundPlayer>>();
+        Form confKeys;
+        Keys redAllieKey;
+        Keys blueAllieKey;
+        Keys redEnemyKey;
+        Keys blueEnemyKey;
+        Keys drakeKey;
+        Keys nashorKey;
+        Keys pauseKey;
+        Keys resetKey;
         globalKeyboardHook ghk = new globalKeyboardHook();
+
 
         #region enums
 
@@ -46,11 +56,11 @@ namespace Jungler_Timers
 
         public void initialization()
         {
+            initKeys();
             initAllWindow();
             resetAllTimers();
             initLanguages();
             initMessages();
-            initKeys();
         }
 
         #region methods
@@ -89,6 +99,12 @@ namespace Jungler_Timers
                 button_enemyRed.Text = "Buff rouge ennemi";
                 button_drake.Text = "Timer drake";
                 button_baronNashor.Text = "Timer baron Nashor";
+                buttonRedAllieKey.Text = "Configurer touche";
+                buttonRedEnemyKey.Text = "Configurer touche";
+                buttonBlueAllieKey.Text = "Configurer touche";
+                buttonBlueEnemyKey.Text = "Configurer touche";
+                buttonDrakeKey.Text = "Configurer touche";
+                buttonNashorKey.Text = "Configurer touche";
             }
             else
             {
@@ -98,6 +114,12 @@ namespace Jungler_Timers
                 button_enemyRed.Text = "Enemies red timer";
                 button_drake.Text = "Drake timer";
                 button_baronNashor.Text = "Baron Nashor timer";
+                buttonRedAllieKey.Text = "Configure key";
+                buttonRedEnemyKey.Text = "Configure key";
+                buttonBlueAllieKey.Text = "Configure key";
+                buttonBlueEnemyKey.Text = "Configure key";
+                buttonDrakeKey.Text = "Configure key";
+                buttonNashorKey.Text = "Configure key";
             }
         }
 
@@ -133,7 +155,7 @@ namespace Jungler_Timers
 
         void ghk_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyData == Keys.F1)
+            if (e.KeyData == redAllieKey)
             {
                 if (button_allyRed.state == 0)
                 {
@@ -146,7 +168,7 @@ namespace Jungler_Timers
                     button_allyRed.state = 0;
                 }
             }
-            else if (e.KeyData == Keys.F2)
+            else if (e.KeyData == blueAllieKey)
             {
                 if (button_allyBlue.state == 0)
                 {
@@ -159,7 +181,7 @@ namespace Jungler_Timers
                     button_allyBlue.state = 0;
                 }
             }
-            else if (e.KeyData == Keys.F3)
+            else if (e.KeyData == redEnemyKey)
             {
                 if (button_enemyRed.state == 0)
                 {
@@ -172,7 +194,7 @@ namespace Jungler_Timers
                     button_enemyRed.state = 0;
                 }
             }
-            else if (e.KeyData == Keys.F4)
+            else if (e.KeyData == blueEnemyKey)
             {
                 if (button_enemyBlue.state == 0)
                 {
@@ -185,7 +207,7 @@ namespace Jungler_Timers
                     button_enemyBlue.state = 0;
                 }
             }
-            else if (e.KeyData == Keys.F5)
+            else if (e.KeyData == drakeKey)
             {
                 if (button_drake.state == 0)
                 {
@@ -198,7 +220,7 @@ namespace Jungler_Timers
                     button_drake.state = 0;
                 }
             }
-            else if (e.KeyData == Keys.F6)
+            else if (e.KeyData == nashorKey)
             {
                 if (button_baronNashor.state == 0)
                 {
@@ -211,9 +233,9 @@ namespace Jungler_Timers
                     button_baronNashor.state = 0;
                 }
             }
-            else if (e.KeyData == Keys.F7)
+            else if (e.KeyData == pauseKey)
                 pauseAllTimers();
-            else if (e.KeyData == Keys.F8)
+            else if (e.KeyData == resetKey)
                 resetAllTimers();
         }
 
@@ -223,14 +245,29 @@ namespace Jungler_Timers
 
         private void initKeys()
         {
-            ghk.HookedKeys.Add(Keys.F1);
-            ghk.HookedKeys.Add(Keys.F2);
-            ghk.HookedKeys.Add(Keys.F3);
-            ghk.HookedKeys.Add(Keys.F4);
-            ghk.HookedKeys.Add(Keys.F5);
-            ghk.HookedKeys.Add(Keys.F6);
-            ghk.HookedKeys.Add(Keys.F7);
-            ghk.HookedKeys.Add(Keys.F8);
+            redAllieKey = Keys.NumPad1;
+            redEnemyKey = Keys.NumPad2;
+            blueEnemyKey = Keys.NumPad3;
+            blueAllieKey = Keys.NumPad4;
+            drakeKey = Keys.NumPad5;
+            nashorKey = Keys.NumPad6;
+            pauseKey = Keys.NumPad7;
+            resetKey = Keys.NumPad8;
+            switchKeys();
+        }
+
+        private void switchKeys()
+        {
+            ghk.HookedKeys.Clear();
+            ghk.HookedKeys.Add(redAllieKey);
+            ghk.HookedKeys.Add(redEnemyKey);
+            ghk.HookedKeys.Add(blueAllieKey);
+            ghk.HookedKeys.Add(blueEnemyKey);
+            ghk.HookedKeys.Add(drakeKey);
+            ghk.HookedKeys.Add(nashorKey);
+            ghk.HookedKeys.Add(pauseKey);
+            ghk.HookedKeys.Add(resetKey);
+            ghk.KeyUp -= new KeyEventHandler(ghk_KeyUp);
             ghk.KeyUp += new KeyEventHandler(ghk_KeyUp);
         }
 
@@ -267,6 +304,7 @@ namespace Jungler_Timers
 
         private void initLanguages()
         {
+            switchLanguage(2);
             if (languageSelected == (int)languages.francais)
             {
                 francaisToolStripMenuItem.Checked = true;
@@ -294,6 +332,12 @@ namespace Jungler_Timers
             button_drake.BackgroundImage = Jungler_Timers.Properties.Resources.button;
             button_enemyBlue.BackgroundImage = Jungler_Timers.Properties.Resources.button;
             button_enemyRed.BackgroundImage = Jungler_Timers.Properties.Resources.button;
+            buttonRedAllieKey.BackgroundImage = Jungler_Timers.Properties.Resources.button;
+            buttonRedEnemyKey.BackgroundImage = Jungler_Timers.Properties.Resources.button;
+            buttonBlueEnemyKey.BackgroundImage = Jungler_Timers.Properties.Resources.button;
+            buttonBlueAllieKey.BackgroundImage = Jungler_Timers.Properties.Resources.button;
+            buttonDrakeKey.BackgroundImage = Jungler_Timers.Properties.Resources.button;
+            buttonNashorKey.BackgroundImage = Jungler_Timers.Properties.Resources.button;
 
             /* Init numeric boxes*/
             numeric_redAllieCd.ReadOnly = true;
@@ -322,6 +366,9 @@ namespace Jungler_Timers
             numeric_blueEnemyCd.Maximum = (int)delays.buffs;
             numeric_redAllieCd.Maximum = (int)delays.buffs;
             numeric_redEnemyCd.Maximum = (int)delays.buffs;
+
+            /* Init labels */
+            updateLabels();
         }
 
         private void pauseAllTimers()
@@ -646,6 +693,130 @@ namespace Jungler_Timers
             pictureBox_resetNashor.BorderStyle = BorderStyle.None;
             pictureBox_resetDrake.BorderStyle = BorderStyle.None;
             pictureBox_resetEnemyRed.BorderStyle = BorderStyle.None;
+        }
+
+        private void keyPressed(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (buttonRedAllieKey.state == 1)
+                {
+                    buttonRedAllieKey.state = 0;
+                    redAllieKey = e.KeyCode;
+                }
+                else if (buttonRedEnemyKey.state == 1)
+                {
+                    buttonRedEnemyKey.state = 0;
+                    redEnemyKey = e.KeyCode;
+                }
+                else if (buttonBlueAllieKey.state == 1)
+                {
+                    buttonBlueAllieKey.state = 0;
+                    blueAllieKey = e.KeyCode;
+                }
+                else if (buttonBlueEnemyKey.state == 1)
+                {
+                    buttonBlueEnemyKey.state = 0;
+                    blueEnemyKey = e.KeyCode;
+                }
+                else if (buttonDrakeKey.state == 1)
+                {
+                    buttonDrakeKey.state = 0;
+                    drakeKey = e.KeyCode;
+                }
+                else if (buttonNashorKey.state == 1)
+                {
+                    buttonNashorKey.state = 0;
+                    nashorKey = e.KeyCode;
+                }
+                switchKeys();
+                updateLabels();
+                confKeys.Close();
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+        }
+
+        private void updateLabels()
+        {
+            KeysConverter kc = new KeysConverter();
+            labelRedAllie.Text = kc.ConvertToString(redAllieKey);
+            labelBlueAllie.Text = kc.ConvertToString(blueAllieKey);
+            labelRedEnemy.Text = kc.ConvertToString(redEnemyKey);
+            labelBlueEnemy.Text = kc.ConvertToString(blueEnemyKey);
+            labelNashor.Text = kc.ConvertToString(nashorKey);
+            labelDrake.Text = kc.ConvertToString(drakeKey);
+            labelBlueAllie.Update();
+            labelRedAllie.Update();
+            labelBlueEnemy.Update();
+            labelRedEnemy.Update();
+            labelNashor.Update();
+            labelDrake.Update();
+        }
+
+        private void configureHotkeys()
+        {
+            try
+            {
+                confKeys = new Form();
+                Label box = new Label();
+                box.Font = new Font("Segoe UI", 15);
+                box.Width = 350;
+                box.Height = 150;
+                if (languageSelected == 1)
+                    box.Text = "Appuyez sur une touche";
+                else
+                    box.Text = "Press a key";
+                box.Location = new Point(110, 35);
+                confKeys.Icon = System.Drawing.Icon.FromHandle(Jungler_Timers.Properties.Resources.icon.GetHicon());
+                confKeys.Width = 350;
+                confKeys.Height = 150;
+                confKeys.KeyUp += new KeyEventHandler(keyPressed);
+                confKeys.Controls.Add(box);
+                confKeys.Show();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);                
+            }
+        }
+
+        private void buttonRedAllieKey_Click(object sender, EventArgs e)
+        {
+            buttonRedAllieKey.state = 1;
+            configureHotkeys();
+        }
+
+        private void buttonRedEnemyKey_Click(object sender, EventArgs e)
+        {
+            buttonRedEnemyKey.state = 1;
+            configureHotkeys();
+        }
+
+        private void buttonBlueAllieKey_Click(object sender, EventArgs e)
+        {
+            buttonBlueAllieKey.state = 1;
+            configureHotkeys();
+        }
+
+        private void buttonBlueEnemyKey_Click(object sender, EventArgs e)
+        {
+            buttonBlueEnemyKey.state = 1;
+            configureHotkeys();
+        }
+
+        private void buttonDrakeKey_Click(object sender, EventArgs e)
+        {
+            buttonDrakeKey.state = 1;
+            configureHotkeys();
+        }
+
+        private void buttonNashorKey_Click(object sender, EventArgs e)
+        {
+            buttonNashorKey.state = 1;
+            configureHotkeys();
         }
     }
 }
